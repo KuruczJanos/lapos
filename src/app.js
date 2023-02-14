@@ -31,6 +31,7 @@ function loadEmployees() {
         tr.append(tdCity);
         tr.append(tdSalary);
         tr.append(generateDeletebutton(dolgozo.id));
+        tr.append(generateModifiebutton(dolgozo));
        
     });
 }
@@ -68,6 +69,22 @@ addButton.addEventListener('click', () => {
     addEmployee();
 });
 
+function generateModifiebutton(dolgozo){
+    let tdModifie = document.createElement('td');
+    let button = document.createElement('button');
+    button.textContent = "Módosítás";
+    button.classList ="btn btn-primary";
+    handleModifieEvent(button, dolgozo);
+    tdModifie.append(button);
+    return tdModifie;    
+}
+
+function handleModifieEvent(button, dolgozo){
+    button.addEventListener('click', () => {
+        
+    }
+    );
+}
 function addEmployee() {
     dolgozo = {
         name: nameInput.value,
